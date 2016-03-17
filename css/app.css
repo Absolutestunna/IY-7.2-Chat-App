@@ -5783,7 +5783,8 @@ body {
       .container .userinfo form .name {
         margin-bottom: 20px; }
   .container .chat-box {
-    margin-top: 20px; }
+    margin-top: 20px;
+    width: 100%; }
     .container .chat-box .msgs {
       height: 300px;
       width: 100%;
@@ -5796,4 +5797,7 @@ body {
       margin-bottom: 20px; }
     .container .chat-box button {
       float: right; }
+    .container .chat-box #chat-form {
+      width: 100%; }
+
 /*# sourceMappingURL=app.css.map */
