@@ -10,8 +10,9 @@ var UserInfoComponent = React.createClass({displayName: "UserInfoComponent",
     handleSubmit: function(e){
       e.preventDefault();
       name =  $('.name').val();
-      this.props.model.set({model: name})
-      console.log(name)
+      // this.props.model.set({model: name})
+      localStorage.setItem("username", name);
+      this.props.model.set({"username": localStorage.username});
       if (name != ''){
         Backbone.history.navigate('chat', {trigger: true});
       }

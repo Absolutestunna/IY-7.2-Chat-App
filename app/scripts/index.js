@@ -6,7 +6,6 @@ var $ = require('jquery');
 
 var Router = require('./routers/router');
 var realRouter = new Router();
-// console.log(realRouter)
 $(function(){
   Backbone.history.start();
 });

@@ -6,9 +6,9 @@ var MessageModel = Backbone.Model.extend({
 
 var MessagesCollection = Backbone.Collection.extend({
   model: MessageModel,
-  url: 'http://tiny-lasagna-server.herokuapp.com/collections/messages',
+  url: 'http://tiny-lasagna-server.herokuapp.com/collections/m',
   parse: function(data){
-    console.log(data)
+    return data;
   }
 });
 
