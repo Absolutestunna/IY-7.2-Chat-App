@@ -5785,10 +5785,15 @@ body {
   .container .chat-box {
     margin-top: 20px;
     width: 100%; }
-    .container .chat-box .msgs {
+    .container .chat-box .incomeMsgs {
       height: 300px;
       width: 100%;
       background-color: #A8C151; }
+      .container .chat-box .incomeMsgs .chat-box {
+        height: 50px;
+        background-color: blue;
+        color: green;
+        font-size: 15px; }
     .container .chat-box .personalmsgs {
       height: 80px;
       width: 100%;
