@@ -12,7 +12,6 @@ var UserModel = require('./../models/userinformation');
 
 var user = new UserModel();  //username and password
 var messageCollection = new message.MessagesCollection();
-// messageCollection.fetch();
 
 var Router = Backbone.Router.extend({
   routes: {
@@ -20,7 +19,6 @@ var Router = Backbone.Router.extend({
     'chat': 'chatspace'
   },
   welcomeIndex: function(){
-    // this.user.set({name: Jake}) //then use a .get to ini
     ReactDOM.render(
       React.createElement(UserInfo, {model: user})
         , document.getElementById('container')

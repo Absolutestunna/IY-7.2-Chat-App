@@ -16,11 +16,12 @@ var MessageComponent = React.createClass({displayName: "MessageComponent",
     }
   },
   componentDidMount: function(){
-    // setInterval(this.fetchData, 1000);
+    setInterval(this.fetchData, 1000);
   },
 
   fetchData: function(){
     this.props.collection.fetch();
+    // this.state.messageCollection.fetch();
   },
   handlePostData: function(e){
     e.preventDefault();
@@ -29,26 +30,25 @@ var MessageComponent = React.createClass({displayName: "MessageComponent",
       content: $(".personalmsgs").val(),
       time: moment(new Date()).fromNow()
     })
-    this.props.collection.create(this.state)
+    this.props.collection.create({username: this.state.username, content:this.state.content, time:this.state.time})
   },
   render: function(){
       var messages = this.props.collection.map(function(model){
 
         return (React.createElement("div", null, 
-            React.createElement("div", {key: model._id}, 
+            React.createElement("div", {key: model.get('_id')}, 
               React.createElement("span", null, model.get('content')), 
               React.createElement("span", null, model.get('username')), 
               React.createElement("span", null, model.get('time'))
             )
         )
         )
-
       });
   return (
       React.createElement("div", null, 
         React.createElement("div", {className: "row chat-box"}, 
-            React.createElement("div", {className: "msgs"}, 
-              React.createElement("div", null, messages)
+            React.createElement("div", {className: "incomeMsgs"}, 
+              React.createElement("div", {className: "chat-box"}, messages)
             ), 
             React.createElement("form", {id: "chat-form", className: "input-group"}, 
               React.createElement("textarea", {value: this.props.content, className: "personalmsgs form-control", type: "text", name: "name", rows: "8"}), 

@@ -31,7 +31,6 @@ var UserInfoComponent = React.createClass({displayName: "UserInfoComponent",
                   React.createElement("div", {className: "col-md-12"}, 
                     React.createElement("form", {onSubmit: this.handleSubmit, role: "form"}, 
                         React.createElement("input", {onChange: this.handleChange, className: "form-control name", type: "text", name: "name", placeholder: "Username"}), 
-
                         React.createElement("button", {className: "btn btn-default", type: "submit"}, "Submit")
                     )
                   )

@@ -35,11 +35,16 @@ body {
   .chat-box {
     margin-top: 20px;
     width: 100%;
-    .msgs {
+    .incomeMsgs {
       height: 300px;
       width: 100%;
       background-color: #A8C151;
-
+      .chat-box {
+        height: 50px;
+        background-color: blue;
+        color: green;
+        font-size: 15px;
+      }
     }
     .personalmsgs {
       height: 80px;

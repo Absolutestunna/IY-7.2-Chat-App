@@ -17,11 +17,12 @@ var MessageComponent = React.createClass({
     }
   },
   componentDidMount: function(){
-    // setInterval(this.fetchData, 1000);
+    setInterval(this.fetchData, 1000);
   },
 
   fetchData: function(){
     this.props.collection.fetch();
+    // this.state.messageCollection.fetch();
   },
   handlePostData: function(e){
     e.preventDefault();
@@ -30,26 +31,25 @@ var MessageComponent = React.createClass({
       content: $(".personalmsgs").val(),
       time: moment(new Date()).fromNow()
     })
-    this.props.collection.create(this.state)
+    this.props.collection.create({username: this.state.username, content:this.state.content, time:this.state.time})
   },
   render: function(){
       var messages = this.props.collection.map(function(model){
 
         return (<div>
-            <div key={model._id}>
+            <div key={model.get('_id')}>
               <span>{model.get('content')}</span>
               <span>{model.get('username')}</span>
               <span>{model.get('time')}</span>
             </div>
         </div>
         )
-
       });
   return (
       <div>
         <div className="row chat-box">
-            <div className="msgs">
-              <div>{messages}</div>
+            <div className="incomeMsgs">
+              <div className="chat-box">{messages}</div>
             </div>
             <form id="chat-form" className="input-group">
               <textarea value={this.props.content} className="personalmsgs form-control" type="text" name="name" rows="8"></textarea>

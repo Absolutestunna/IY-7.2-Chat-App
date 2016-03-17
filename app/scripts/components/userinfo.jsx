@@ -32,7 +32,6 @@ var UserInfoComponent = React.createClass({
                   <div className="col-md-12">
                     <form onSubmit={this.handleSubmit} role="form">
                         <input onChange={this.handleChange} className="form-control name" type="text" name="name" placeholder="Username" />
-
                         <button className="btn btn-default" type="submit">Submit</button>
                     </form>
                   </div>
